@@ -1,4 +1,4 @@
-SCUFLix
+# SCUFLix
 
 A movie streaming project built using React, Spring & MongoDB.
 
