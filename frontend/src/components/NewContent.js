@@ -7,7 +7,7 @@ class NewContent extends Component {
     super(props);
     this.state = {
       page: 1,
-      title: 'trending content',
+      title: 'Trending',
     };
   }
 

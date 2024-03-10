@@ -1,30 +1,20 @@
 import React from 'react';
-import DetailContent from './DetailContent';
 import Fade from 'react-reveal';
+import DetailContent from './DetailContent';
     
-// const IMG_API = "https://image.tmdb.org/t/p/w154";
 
 const SearchMovie = () => {
     let resultImage=null;
     if (window.sessionStorage.getItem("movies") != null) {
 
         let result = JSON.parse(window.sessionStorage.getItem("movies"));
-        console.log("데이터가 있는결과 : ", result);
-        //If there is data for the entered keyword in SearchBar, a list is displayed. If not, it goes down to line 35 else.
+
         if (result[0].length > 0) {
             resultImage = result[0].map(item => {
                 
                 return (
                     <DetailContent id={item.id} movie={item} />
-                    // item.poster_path == null ? <img alt={item.title} src={"https://i.ytimg.com/vi/GV3HUDMQ-F8/maxresdefault.jpg"} height="270" width="180" style={{margin: '5px'}} />
-                    // : <img
-                    // key={item.id}
-                    // src={IMG_API + item.poster_path}
-                    // //  height="200"
-                    // width="180"
-                    // alt={item.title}
-                    // style={{margin: '5px'}}
-                    // />
+
                 );
             })
         }
@@ -44,7 +34,7 @@ const SearchMovie = () => {
         <Fade bottom>
             <div className="container-fluid" style={{backgroundColor: '#181818'}}>
                 <div className="container">
-                    <h3 style={{color: 'white', fontWeight: 'bold', marginBottom: 20}}>검색 목록</h3>
+                    <h3 style={{color: 'white', fontWeight: 'bold', marginBottom: 20}}>Search Result</h3>
                     <div className="row">
                             {resultImage}
                     </div>

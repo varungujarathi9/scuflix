@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const API_URL = "http://localhost:7777/user/v1/comment"; //spring boot back-end url
+const API_URL = "http://localhost:7777/user/v1/comment";
 
 class CommentApiService {
   writeMovieComment(comment) {

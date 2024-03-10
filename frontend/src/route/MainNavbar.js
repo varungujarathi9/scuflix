@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import "../styles/App.css";
-import SearchBar from "../components/SearchBar";
 import UserApiService from "../apis/UserApiService";
+import SearchBar from "../components/SearchBar";
+import "../styles/App.css";
 
 class MainNavbar extends Component {
-  //Logout Func
   onLogout = () => {
     UserApiService.logoutOK()
       .then((res) => {
         let status = res.status;
-        console.log(res.status);
         if (status === 200) {
           alert("Logout done!");
           sessionStorage.removeItem("user");
@@ -18,7 +16,7 @@ class MainNavbar extends Component {
       })
       .catch((err) => {
         console.error("UserApiService error : ", err);
-        alert("Logout error \nPlease try again👻");
+        alert("Logout error \nPlease try again");
       });
   };
   render() {
@@ -26,32 +24,31 @@ class MainNavbar extends Component {
       <div className="mainNavbar">
         <nav className="navbar">
           <ul className="nav justify-content-start">
-            {/* <!-- Brand --> */}
             <a
               className="navbar-brand"
               href="/"
-              style={{ color: "red", fontFamily: "fantasy", fontSize: 25 }}
+              style={{ color: "yellow", fontFamily: "monospace", fontSize: 25, fontWeight: 'bold'}}
             >
-              NETFLIX
+              SCUFLIX
             </a>
 
             <li className="nav-item">
-              <a className="nav-link" href="/" style={{ color: "white" }}>
-              home
+              <a className="nav-link" href="/" style={{ color: "white", fontWeight: 'bold'}}>
+              Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/movie" style={{ color: "white" }}>
-              movie
+              <a className="nav-link" href="/movie" style={{ color: "white", fontWeight: 'bold' }}>
+              Movie
               </a>
             </li>
             <li className="nav-item">
               <a
                 className="nav-link"
                 href="/newContent"
-                style={{ color: "white" }}
+                style={{ color: "white", fontWeight: 'bold' }}
               >
-                NEW! Today's trending content
+                Trending
               </a>
             </li>
             <li className="nav-item">
@@ -61,7 +58,7 @@ class MainNavbar extends Component {
                 href="/myContent"
                 style={{ color: "white" }}
               >
-                My Favorite Content
+                Wishlist
               </a>
               : ''
               } 
@@ -69,7 +66,6 @@ class MainNavbar extends Component {
           </ul>
           <ul className="nav justify-content-end">
             <li>
-              {/* <SearchBar handleSubmit={this.handleSubmit} handleChange={this.handleChange} /> */}
               <SearchBar />
             </li>
             <li className="nav-item">
@@ -78,9 +74,9 @@ class MainNavbar extends Component {
                   <a
                     className="nav-link"
                     href="/login"
-                    style={{ color: "white" }}
+                    style={{ color: "white", fontWeight: 'bold' }}
                   >
-                    login
+                    Login
                   </a>
                 ) : (
                   <a

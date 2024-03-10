@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import * as Icon from 'react-bootstrap-icons';
 import Fade from 'react-reveal';
 import Slider from "react-slick";
 import DetailContent from './DetailContent';
-import * as Icon from 'react-bootstrap-icons';
 
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 const Row = ({
   actions,
@@ -17,13 +17,6 @@ const Row = ({
   horrors,
   populars,
 }) => {
-  //   console.log("props action value:", actions);
-  //   console.log("props adventures:", adventures);
-  // console.log('props comedys:', comedys);
-  // console.log('props documentarys:', documentarys);
-  // console.log('props familys:', familys);
-  // console.log('props fantasys:', fantasys);
-  // console.log('props horrors:', horrors);
 
   const RightArrow = (props) => {
     const { onClick } = props;
@@ -45,7 +38,7 @@ const Row = ({
       ><Icon.ChevronCompactLeft style={{height: '100%'}} /></div>
     );
   }
-  const settings = {  // Slider settings
+  const settings = {  
     infinite : true,
     slidesToShow : 1,
     slidesToScroll : 5,
@@ -57,7 +50,7 @@ const Row = ({
     <div>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>Popular content</h3>
+          <h3 className='titleFont'>Recommended</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -77,7 +70,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>action</h3>
+          <h3 className='titleFont'>Action</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -97,7 +90,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>adventure</h3>
+          <h3 className='titleFont'>Adventure</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -117,7 +110,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>comedy</h3>
+          <h3 className='titleFont'>Comedy</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -137,7 +130,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>documentary</h3>
+          <h3 className='titleFont'>Documentary</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -157,7 +150,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>family movie</h3>
+          <h3 className='titleFont'>Family</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -177,7 +170,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>fantasy</h3>
+          <h3 className='titleFont'>Fantasy</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>
@@ -197,7 +190,7 @@ const Row = ({
       </Fade>
       <Fade bottom>
         <div className='rowStyle'>
-          <h3 className='titleFont'>horror</h3>
+          <h3 className='titleFont'>Horror</h3>
           <div className="row">
             <div className='col'>
               <Slider {...settings}>

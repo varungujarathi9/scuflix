@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const API_URL = "http://localhost:7777/user/v1"; //spring boot back-end url
+const API_URL = "http://localhost:7777/user/v1"; 
 
 class UserApiService {
   joinUser(user) {

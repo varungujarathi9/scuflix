@@ -1,26 +1,26 @@
 import Axios from 'axios';
 
-const API_URL = 'http://localhost:7777/users'  //spring boot back-end url
+const API_URL = 'http://localhost:7777/users'  
 
 class ApiService {
 
-    fetchUsers() {  //'http://localhost:7777/users' -> Full list of users
+    fetchUsers() {  
         return Axios.get(API_URL);
     }
 
-    fetchUserByID(id) {  //'http://localhost:7777/users/2' -> Specific user information inquiry
+    fetchUserByID(id) { 
         return Axios.get(API_URL + '/' + id)
     }
 
-    addUser(user) { //POST user information back-end forwarding
+    addUser(user) { 
         return Axios.post(API_URL, user);
     }
 
-    editUser(user) {    //PUT user revision information transmitted to back-end
+    editUser(user) {   
         return Axios.put(API_URL + '/' + user.id, user);
     }
 
-    removeUser(id) {    //DELETE pass user id
+    removeUser(id) { 
         return Axios.delete(API_URL + '/' + id);
     }
 }

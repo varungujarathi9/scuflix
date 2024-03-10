@@ -5,21 +5,12 @@ import Row from "./Row";
 class MainPage extends Component {
   constructor(props) {
     super(props);
-    // console.log("Main props", props);
-    // console.log(
-    //   "Main props",
-    //   props.location.search.replace("?", "").split("=")
-    // );
-    //When you log in to Facebook, the ID value is sent as queryString! This is the part that receives that part and saves the session.
-    console.log(props.location.search);
+
     if(props.location.search!==''){
       let id = props.location.search.replace("?", "").split("=");
-      console.log(id);
-      console.log(id[1]);
       sessionStorage.setItem("user", id[1]);
     }
     this.state = {
-      //   genre: ['28', '12', '35', '99', '10751', '14', '27'],
       genre: [
         "Action",
         "Adventure",
@@ -39,36 +30,34 @@ class MainPage extends Component {
 
   getAllMoviesByGenre = async () => {
     for (let i = 0; i < this.state.genre.length; i++) {
-      //debugger;
       await TMDBMovieApiService.getGenreList(this.state.genre[i])
         .then((res) => {
-          //console.log(res.data.results);
           switch (i) {
-            case 0: // action
+            case 0: 
               this.setState({ actions: res.data.results.slice(10) }, () => {});
               break;
-            case 1: // adventure
+            case 1: 
               this.setState(
                 { adventures: res.data.results.slice(10) },
                 () => {}
               );
               break;
-            case 2: // comedy
+            case 2: 
               this.setState({ comedys: res.data.results.slice(10) }, () => {});
               break;
-            case 3: // documentary
+            case 3: 
               this.setState(
                 { documentarys: res.data.results.slice(10) },
                 () => {}
               );
               break;
-            case 4: // family
+            case 4: 
               this.setState({ familys: res.data.results.slice(10) }, () => {});
               break;
-            case 5: // fantasy
+            case 5:
               this.setState({ fantasys: res.data.results.slice(10) }, () => {});
               break;
-            case 6: // horror
+            case 6: 
               this.setState({ horrors: res.data.results.slice(10) }, () => {});
               break;
             default:
@@ -91,12 +80,12 @@ class MainPage extends Component {
   };
   render() {
     return (
-      <div style={{ backgroundColor: "#181818", paddingRight: "15px" }}>
+      <div style={{ backgroundColor: "#181818", paddingRight: "15px", paddingLeft: "15px" }}>
         <div className="row">
           <div className="col-12">
             <iframe
-              src="https://youtube.com/embed/UIA1QoGATHY"
-              title="Youtube Video Player"
+              src="https://www.youtube.com/embed/qqrpMRDuPfc?si=3oeauLgLz0jYQfQm"
+              title="Godzilla vs. Kong  - 2"
               className="video"
               allowFullScreen
               frameBorder="0"
@@ -104,21 +93,7 @@ class MainPage extends Component {
             />
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <button
-              type="button"
-              className="btn btn-light"
-              style={{ margin: 10 }}
-              children="▶ play"
-            />
-            <button
-              type="button"
-              className="btn btn-secondary"
-              children="More information"
-            />
-          </div>
-        </div>
+
         <div className="row">
           <div className="col">
             <Row

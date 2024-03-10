@@ -1,5 +1,4 @@
 import Axios from 'axios';
-// http://localhost:8080/api/movie/popular?page=1
 const SPRING_API_URL = 'http://localhost:7777/api/v1/movie/';
 
 class TMDBMovieApiService {
@@ -7,7 +6,6 @@ class TMDBMovieApiService {
     return Axios.get(SPRING_API_URL + 'genre?genre=' + genre);
   }
   getDatasByGenre(genre) {
-    // console.log('Listed genre values:', genre);
     return Axios.get(SPRING_API_URL + 'genre?genre=' + genre);
   }
   getYoutubeKey(id) {

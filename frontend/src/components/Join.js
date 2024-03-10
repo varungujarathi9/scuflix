@@ -10,9 +10,7 @@ class Join extends Component {
       name: "",
     };
   }
-  //sign up method
   JoinUser = () => {
-    console.log("Sign Up!");
     let user = {
       email: this.state.email,
       password: this.state.password,
@@ -20,20 +18,17 @@ class Join extends Component {
     };
     UserApiService.joinUser(user)
       .then((res) => {
-        console.log(res.data);
         if (res.data === 0) {
           alert("Membership failed! same ID exists");
         } else {
           let userid = res.data;
-          //After saving the user information in the session, it is sent to the home path.
           alert("Membership successful");
           sessionStorage.setItem("user", userid);
           window.location.href = "http://localhost:3000";
         }
       })
-      .catch((err) => console.log(err));
   };
-  //User information handler
+
   joinInfoHandler = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -42,7 +37,6 @@ class Join extends Component {
   render() {
     return (
       <div style={{ flex: 1 }}>
-        {/* <h1 style={{color: 'red' , marginTop: 10, marginLeft: 0, fontFamily: 'fantasy'}}>NETFLIX</h1> */}
         <div
           className="container"
           style={{
@@ -55,22 +49,27 @@ class Join extends Component {
           <div className="row">
             <div className="col">
               <div style={{ margin: 20 }}>
-                <p style={{ fontWeight: "bold", fontSize: 18, color: "white" }}>
-                Set up your email and password and start your membership.
-                </p>
-                <p style={{ color: "white" }}>
-                    Sign up for Netflix in just a few more steps!
-                  <br />
-                  All complicated steps have been eliminated.
+                <p style={{ fontWeight: "bold", fontSize: 18, color: "white", textAlign:"center" }}>
+                SignUp Now!
                 </p>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col">
+            <input
+                name="name"
+                placeholder="Username"
+                type="text"
+                className="form-control"
+                value={this.state.name}
+                onChange={(e) => this.joinInfoHandler(e)}
+                style={{ margin: 20 }}
+              />
+
               <input
                 name="email"
-                placeholder="email"
+                placeholder="Email Address"
                 type="text"
                 className="form-control"
                 value={this.state.email}
@@ -86,28 +85,21 @@ class Join extends Component {
                 onChange={(e) => this.joinInfoHandler(e)}
                 style={{ margin: 20 }}
               />
-              <input
-                name="name"
-                placeholder="Name"
-                type="text"
-                className="form-control"
-                value={this.state.name}
-                onChange={(e) => this.joinInfoHandler(e)}
-                style={{ margin: 20 }}
-              />
+
               <button
                 type="button"
                 onClick={() => this.JoinUser()}
                 className="btn btn-block"
                 style={{
                   margin: 20,
-                  backgroundColor: "red",
-                  color: "white",
+                  backgroundColor: "yellow",
+                  color: "black",
                   fontWeight: "bold",
                 }}
               >
-                다음
+                SIGN UP
               </button>
+              <a href="/login" style={{ color: "white", fontWeight: "bold" }}>Already have an account? Login</a>
             </div>
           </div>
         </div>

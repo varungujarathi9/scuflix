@@ -60,8 +60,15 @@
     padding-top: 10px;
     color: #7f7d7d;
     margin: 0;
+    margin-top: 10px;
   }
   
   .forgot-password a {
     color: #167bff;
   }
+
+  .signup-text {
+    margin-top: 20px; 
+  }
+  
+  

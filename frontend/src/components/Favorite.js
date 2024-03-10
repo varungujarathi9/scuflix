@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import DetailContent from './DetailContent';
-import '../styles/Detail.css';
 import FavoriteMovieApiService from '../apis/FavoriteMovieApiService';
+import '../styles/Detail.css';
+import DetailContent from './DetailContent';
 
 
 class Favorite extends Component {
@@ -43,7 +43,7 @@ class Favorite extends Component {
                     <div className='col'>
                         <div className="container-fluid" style={{backgroundColor: '#181818'}}>
                             <div className="container">
-                                <h3 style={{color: 'white', fontWeight: 'bold', marginBottom: 20}}>my wish list</h3>
+                                <h3 style={{color: 'white', fontWeight: 'bold', marginBottom: 20}}>My Wish List</h3>
                                 <div className="row">
                                     {this.state.movies ? this.state.movies.map((item) => {
                                         return (

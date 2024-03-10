@@ -29,7 +29,6 @@ class Comments extends Component {
           {this.props.content}
         </div>
         <div className="col-2">
-          {/* In the case of the person who wrote the comment, it can be deleted */}
           {sessionStorage.getItem("user") === this.props.user_id.toString() ? (
             <MdContentCut
               onClick={() =>

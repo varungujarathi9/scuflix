@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 const PageUl = styled.ul`
   float: left;
   list-style: none;
@@ -11,6 +12,7 @@ const PageUl = styled.ul`
   border-bottom: 3px solid #186ead;
   background-color: rgba(0, 0, 0, 0.4);
 `;
+
 const PageLi = styled.li`
   display: inline-block;
   font-size: 17px;
@@ -21,11 +23,11 @@ const PageLi = styled.li`
   &:hover {
     cursor: pointer;
     color: white;
-    background-color: #263a6c;
+    background-color: yellow;
   }
   &:focus::after {
     color: white;
-    background-color: #263a6c;
+    background-color: green;
   }
 `;
 

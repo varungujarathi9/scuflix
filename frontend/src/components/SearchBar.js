@@ -26,40 +26,38 @@ class SearchBar extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       if (sessionStorage.getItem("movies") != null) {
-          //When re-searching, delete the previously searched data from the session value and search again
-          sessionStorage.removeItem("movies");
+
+        sessionStorage.removeItem("movies");
           if(this.state.searchTerm !== '') {
               fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`)
               .then(data => data.json())
               .then(data => {
-                console.log(data);
                 this.setState({movies: [data.results]})
                 window.sessionStorage.setItem("movies", JSON.stringify(this.state.movies));
                 this.moveSearchMovie();
-                // After saving the data value in setItem, execute the move search movie function
+
             })
-          }// if end
+          }
           else {
               alert('Please enter a search term');
-          }// else end
-        }// if end
+          }
+        }
       else if (sessionStorage.getItem("movies") == null) {
             if(this.state.searchTerm !== '') {
                 fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`)
                   .then(data => data.json())
                   .then(data => {
-                    console.log(data);
                     this.setState({movies: [data.results]})
                     window.sessionStorage.setItem("movies", JSON.stringify(this.state.movies));
                     this.moveSearchMovie();
-                    // After saving the data value in setItem, execute the move search movie function
-                  })
-              }//if end 
+
+                })
+              }
               else {
                   alert('Please enter a search term');
-              }// else end
-            }//else if end
-    }//handlesubmit end
+              }
+            }
+    }
 
     render() {
         return (
@@ -68,23 +66,18 @@ class SearchBar extends Component {
                     <div className="input-field0">
                         <input
                             className="form-control mr-sm-2"
-                            type="text" placeholder="Search"
+                            type="text" placeholder="Search...."
                             onChange={this.handleChange}
                         />
                         <button
-                            className="btn btn-success"
+                            className="btn btn-warning"
                             type="submit"
-                            // onClick={this.moveSearchMovie}
-                            // If I write here, when I press the button
-                            // Handle Submit and Move Search Movie
-                            // Before running together to receive data
-                            //It may be skipped. Lines 36 to 7
-                            // Save the data and move to the screen showing the searched movies
+
                         >
-                            <Icon.Search/>
+                            <Icon.Search className='bg-warning'/>
                         </button>
-                            {/* <SearchMovie movies={this.state.movies} /> */}
-                    </div>
+
+                        </div>
                 </form>
             </div>
         );
