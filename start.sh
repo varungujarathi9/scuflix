@@ -1,8 +1,8 @@
 #!/bin/bash
 
 docker compose up -d
-cd react-frontend
-cd ../netflixCloneSpringBackend
+cd frontend
+cd ../backend
 mvn clean install
 mvn spring-boot:run &
 yarn start &
