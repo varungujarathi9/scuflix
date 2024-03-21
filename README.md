@@ -2,9 +2,9 @@
 
 An on-demand video streaming project built using React, Spring & MongoDB.
 
-(Santa Clara University - COEN 275 - Object Oriented Analysis & Design)
+_(Santa Clara University - COEN 275 - Object Oriented Analysis & Design)_
 
-*Screenshots*
+**Screenshots:**
 <table>
   <tr>
     <td align="center"><img src="https://github.com/varungujarathi9/scuflix/assets/21121816/0bc8040a-86b4-4132-9026-a32870ffb471" alt="Image 1" width="500"/></td>
